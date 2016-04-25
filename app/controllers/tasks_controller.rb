@@ -31,7 +31,7 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     if @task.destroy
-      render json: { task: nil } status: :accepted
+      render json: { task: nil }, status: :accepted
     else
       render json: { errors: @task.errors }, status: :unprocessable_entity
     end
